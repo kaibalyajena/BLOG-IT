@@ -14,5 +14,5 @@ mongoose.connect(process.env.MONGO_URL,{
 app.use("/api/auth",authRoute)
 
 app.listen("3000",()=>{
-    console.log("the backend is running hello my friends what is up bro")
+    console.log("the backend is running")
 })
