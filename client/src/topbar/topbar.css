@@ -8,6 +8,7 @@
     align-items: center; /*centers along the height of the div */
     /*justify-content: center; centers along the width of the div*/
     font-family: 'Josefin Sans', sans-serif;
+    z-index: 999;
 }
 
 .topLeft,.topRight{
