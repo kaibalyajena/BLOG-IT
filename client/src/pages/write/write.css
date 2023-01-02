@@ -1,0 +1,61 @@
+.write{
+    padding-top: 50px;
+}
+
+.writeForm{
+    position: relative;
+}
+
+.writeFormGroup{
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.writeIcon{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    font-size: 20px;
+}
+
+.writeInput{
+    border:none;
+    font-size: 30px;
+    padding: 20px;
+    width: 70vw;
+}
+
+.writeInput:focus{
+    outline: none;
+}
+
+.writeText{
+    font-size: 20px;
+    height: 100vh;
+}
+.writeSubmit{
+    position: absolute;/*the parent must be positioned relative for the child to be positioned absolute*/
+    top: 20px;
+    right: 50px;
+    border-radius: 10px;
+    color: white;
+    background-color: teal;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.writeImage{
+   margin-left: 150px;
+   width: 70vw;
+   height: 300px;
+   object-fit: cover;
+   border-radius: 10px;
+}
