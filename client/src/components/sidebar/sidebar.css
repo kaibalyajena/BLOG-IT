@@ -50,6 +50,7 @@ p{
     display: inline-block;
     width: 50%;
     margin-top: 15px;
+    margin-right: 1px;
     cursor: pointer;
 }
 
