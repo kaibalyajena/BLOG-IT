@@ -1,20 +1,20 @@
 import "./post.css"
 
-export default function Post() {
+export default function Post({post}) {
   return (
     <div className='post'>
-        <img className="postImage" src="https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=400" alt="post pic" />
+      {post.photo && (<img className="postImage" src={post.photo} alt="post pic" />)}
         <div className="postInfo">
             <div className="postCats">
-                <span className="postCat">life</span>
-                <span className="postCat">cinema</span>
+              {post.categories.map(c=>(
+                <span className="postCat">{c.name}</span>
+              ))}
+                
             </div>
-            <span className="postTitle">The old cinematic life</span>
-            <span className="postDate">1 day ago</span>
+            <span className="postTitle">{post.title}</span>
+            <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
             <p className="postDesc">
-              this section is going to be for the post description the user can the write whatsoever description he likes for the post that he created this is just a mock one the real one will fetched from the mongodb database
-              this section is going to be for the post description the user can the write whatsoever description he likes for the post that he created this is just a mock one the real one will fetched from the mongodb database
-              this section is going to be for the post description the user can the write whatsoever description he likes for the post that he created this is just a mock one the real one will fetched from the mongodb database
+              {post.desc}
             </p>
         </div>
     </div>
