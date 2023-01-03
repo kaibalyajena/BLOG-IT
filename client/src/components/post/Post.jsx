@@ -1,4 +1,5 @@
 import "./post.css"
+import {Link} from "react-router-dom"
 
 export default function Post({post}) {
   return (
@@ -9,9 +10,8 @@ export default function Post({post}) {
               {post.categories.map(c=>(
                 <span className="postCat">{c.name}</span>
               ))}
-                
             </div>
-            <span className="postTitle">{post.title}</span>
+            <Link className="link" to={`/post/${post._id}`}><span className="postTitle">{post.title}</span></Link>
             <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
             <p className="postDesc">
               {post.desc}
