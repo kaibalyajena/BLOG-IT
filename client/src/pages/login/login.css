@@ -38,6 +38,11 @@
     cursor: pointer;
 }
 
+.loginForm > button:disabled{
+    cursor: not-allowed;
+    background-color: rgb(109, 226, 226);
+}
+
 .loginRegisterButton{
     position: absolute;
     top: 60px;
