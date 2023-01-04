@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { useLocation,Link } from "react-router-dom"
 import axios from "axios"
 import "./singlePost.css"
+import { useContext } from "react"
+import { Context } from "../../context/Context"
 
 export default function SinglePost() {
   const location = useLocation()
@@ -18,6 +20,15 @@ export default function SinglePost() {
   }, [path])
 
   const PF = "http://localhost:4000/images/"
+
+  const {user} = useContext(Context)
+
+  const handleDelete= async ()=>{
+    try{
+      await axios.delete("/posts/"+path,{data:{username: user.username}})
+      window.location.replace("/")
+    }catch(err){}
+  }
   
   return (
     <div className="singlePost">
@@ -26,10 +37,12 @@ export default function SinglePost() {
             
             <h1 className="singlePostTitle">
                 {post.title}
-                <div className="singlePostEdit">
+                {(post.username === user?.username) && (<div className="singlePostEdit">
                 <i className="singlePostIcon fa-solid fa-pen-to-square"></i>
-                <i className="singlePostIcon fa-solid fa-trash"></i>
+                <i className="singlePostIcon fa-solid fa-trash" onClick={handleDelete}></i>
                 </div>
+                )}
+                
             </h1>
             <div className="singlePostInfo">
                 <span className="singlePostAuthor">Author: <b>
