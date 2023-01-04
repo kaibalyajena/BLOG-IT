@@ -16,11 +16,13 @@ export default function SinglePost() {
     }
     getPost()
   }, [path])
+
+  const PF = "http://localhost:4000/images/"
   
   return (
     <div className="singlePost">
         <div className="singlePostWrapper">
-          {post.photo && (<img className="singlePostImage" src={post.photo} alt="" />)}
+          {post.photo && (<img className="singlePostImage" src={PF+post.photo} alt="" />)}
             
             <h1 className="singlePostTitle">
                 {post.title}
