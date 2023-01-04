@@ -10,14 +10,14 @@ const INITIAL_STATE = {
 export const Context = createContext(INITIAL_STATE)
 
 export const ContextProvider = ({children}) =>{
-    const [state,dispath] = useReducer(Reducer,INITIAL_STATE)
+    const [state,dispatch] = useReducer(Reducer,INITIAL_STATE)
 
     return (
         <Context.Provider value = {{
             user:state.user,
             isFetching:state.isFetching,
             error:state.error,
-            dispath
+            dispatch
         }}>
             {children}
         </Context.Provider>
