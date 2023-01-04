@@ -12,14 +12,20 @@ const Reducer = (state,action)=>{
                 isFetching:false,
                 error:false
             }
-            case "LOGIN_FAILURE":
+        case "LOGIN_FAILURE":
+        return {
+            user:null,
+            isFetching:false,
+                error:true
+        }
+        case "LOGOUT":
             return {
                 user:null,
                 isFetching:false,
-                   error:true
+                error:false  //going to the initial state after logout
             }
-            default:
-                return state        
+        default:
+            return state        
     }
 }
 
