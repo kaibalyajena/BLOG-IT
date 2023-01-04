@@ -38,7 +38,7 @@ export default function TopBar() {
         </ul>
       </div>
       <div className="topRight">
-        {user? <img className="topImage" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="profile"></img> :
+        {user? <img className="topImage" src={user.profilePic} alt="profile"></img> :
         <ul className="topList">
           <li className="topListItem">
             <Link to="/register" className="link">REGISTER</Link>

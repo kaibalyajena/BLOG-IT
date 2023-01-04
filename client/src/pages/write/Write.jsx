@@ -1,6 +1,12 @@
+import { useState } from "react"
 import "./write.css"
 
 export default function  Write() {
+  
+  const[file,getFile] = useState(null)
+  const [title,getTitle] = useState("")
+  const [desc,getDesc]= useState("")
+
   return (
     <div className='write'>
         <img src="https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=400" alt="" className="writeImage"/>
