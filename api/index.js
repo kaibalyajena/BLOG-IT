@@ -38,3 +38,20 @@ app.use("/api/categories",categoryRoute)
 app.listen("4000",()=>{
     console.log("the backend is running")
 })
+
+
+
+//connect to mongodb
+// const {MongoClient} = require('mongodb')
+// const url = 'mongodb://localhost:27017'
+// const client = new MongoClient(url)
+
+// async function getData(){
+//     let result = await client.connect()
+//     let db=result.db('mydb')
+//     let collection=db.collection('customer')
+//     let response=await collection.insertOne({name:"vd",age:50});
+//     // console.log(response)
+// }
+
+// getData();
